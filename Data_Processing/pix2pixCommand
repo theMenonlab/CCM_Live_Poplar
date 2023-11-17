@@ -1,0 +1,10 @@
+Here are some examples for training pix2pix
+
+python train.py --dataroot ./datasets/plant_noBlurRemoval_0bp_pix2pix --name plant_noBlurRemoval_0bp_pix2pix --model pix2pix --direction BtoA --input_nc 1 --output_nc 1 --n_epochs 1 --n_epochs_decay 1 --save_epoch_freq 1 --netG unet_256
+
+
+python -m visdom.server
+http://localhost:8097
+
+
+python test.py --dataroot ~/pix2pix/datasets/20230929_timelapse_x5_y0_z14_t26_ref_pro_pix2pix --name combined_plant_0bp_noBlurryRemoval --model pix2pix --direction BtoA --input_nc 1 --output_nc 1 --num_test 112 --epoch latest --netG unet_256
